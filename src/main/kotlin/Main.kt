@@ -1,8 +1,8 @@
 fun main() {
-println(feeCalculate(transactionSum = 15500))
+    println(feeCalculate(transactionSum = 15500))
 }
 
-fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, transactionSum: Int) : Int {
+fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, transactionSum: Int): Int {
     var result = -1
     val maestroAndMasterCardFeeStartLimit = 75_000
     val maestroAndMasterCardFeePercentage = 0.006
@@ -28,9 +28,11 @@ fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, 
             if (previousTransactionsSum + transactionSum <= cardMonthLimit && transactionSum <= cardDayLimit) {
                 when (cardType) {
                     "Mastercard", "Maestro" -> {
-                        if (previousTransactionsSum+transactionSum <= maestroAndMasterCardFeeStartLimit) result = 0
-                            else result = (transactionSum * maestroAndMasterCardFeePercentage).toInt() + maestroAndMaterCardFeeExtra
+                        if (previousTransactionsSum + transactionSum <= maestroAndMasterCardFeeStartLimit) result = 0
+                        else result =
+                            (transactionSum * maestroAndMasterCardFeePercentage).toInt() + maestroAndMaterCardFeeExtra
                     }
+
                     "Visa", "Мир" -> {
                         val preResult = (transactionSum * visaAndMirFeePercentage).toInt()
                         if (preResult > visaAndMirFeeMinFee) result = preResult
