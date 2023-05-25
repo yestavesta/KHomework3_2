@@ -1,5 +1,5 @@
 fun main() {
-   // println(feeCalculate(transactionSum = 100))
+    // println(feeCalculate(transactionSum = 100))
 }
 
 fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, transactionSum: Int): Int {
