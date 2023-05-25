@@ -1,5 +1,5 @@
 fun main() {
-    println(feeCalculate(transactionSum = 15500))
+   // println(feeCalculate(transactionSum = 100))
 }
 
 fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, transactionSum: Int): Int {
@@ -9,7 +9,7 @@ fun feeCalculate(cardType: String = "VK Pay", previousTransactionsSum: Int = 0, 
     val maestroAndMaterCardFeeExtra = 20
 
     val visaAndMirFeePercentage = 0.0075
-    val visaAndMirFeeMinFee = 20
+    val visaAndMirFeeMinFee = 35
 
     val cardDayLimit = 150_000
     val cardMonthLimit = 600_000
