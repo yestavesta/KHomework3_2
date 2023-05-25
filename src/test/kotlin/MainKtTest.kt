@@ -16,7 +16,7 @@ class MainKtTest {
         val cardType = "VK Pay"
         val transactionSum = 10_000
         val result = feeCalculate(cardType, transactionSum = transactionSum)
-        assertEquals(0, result)
+        assertEquals(-1, result)
     }
 
     @Test
